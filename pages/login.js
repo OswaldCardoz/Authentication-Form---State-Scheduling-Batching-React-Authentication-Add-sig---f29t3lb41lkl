@@ -18,23 +18,21 @@ const Login = () => {
   }
   const handleSubmit=(e)=>{
     e.preventDefault();
-    if(email.length<1 || password.length<1){
+    if (email.length < 1 || password.length < 1) {
       setError(true);
-    }else{
-      const user=JSON.parse(localStorage.getItem('user'));
-      if(user && user.email===email && user.password===password){
+    } else {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user && user.email === email && user.password === password) {
         setError(false);
         setEmail('');
         setPassword('');
-        localStorage.setItem('loginStatus', 'true');
-        router.push('/store')
-      }else{
+        localStorage.setItem('loginStatus', 'true'); // Update the key to 'loginStatus'
+        router.push('/store');
+      } else {
         setError(true);
       }
     }
-
-  }
-
+  };
   return (
     <div className='login'>
       <h2>Login</h2>

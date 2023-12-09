@@ -4,14 +4,14 @@ function Store() {
   const router =useRouter();
   useEffect(() => {
     if (localStorage.getItem('loginStatus') !== 'true') {
-        router.replace('/login');
+      router.replace('/login');
     }
-}, []);
+  }, []);
 
 
 const handelLogout = () => {
   localStorage.setItem('loginStatus', 'false');
-  router.push('/login');
+  router.replace('/login'); // Use replace instead of push
 };
 
   return (

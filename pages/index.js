@@ -24,17 +24,17 @@ function Register() {
 
   const handleSubmitChange=(e)=>{
     e.preventDefault();
-    if(email.length<1 || password.length<1){
+    if (email.length < 1 || password.length < 1) {
       setError(true);
-    }else{
-      localStorage.setItem("user",JSON.stringify({email,password}));
+    } else {
+      localStorage.setItem('user', JSON.stringify({ email, password }));
       setLoginStatus(true);
       setError(false);
       setEmail('');
       setPassword('');
-      router.push('/login')
+      router.push('/login');
     }
-  }
+  };
 
   return (
     <div className='register'>
