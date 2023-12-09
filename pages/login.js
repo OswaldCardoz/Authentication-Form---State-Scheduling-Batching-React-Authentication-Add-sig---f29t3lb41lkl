@@ -26,7 +26,7 @@ const Login = () => {
         setError(false);
         setEmail('');
         setPassword('');
-        localStorage.setItem('loginStatus','true');
+        localStorage.setItem('loginStatus', 'true');
         router.push('/store')
       }else{
         setError(true);
